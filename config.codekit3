@@ -633,59 +633,41 @@
 		"sC": 1,
 		"tS": 1
 		},
-	"\/media\/akula.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/akula.mp3",
-		"oF": 0
+	"\/media\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/media\/README.html",
+		"oF": 1,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
-	"\/media\/bowtie.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/bowtie.mp3",
-		"oF": 0
-		},
-	"\/media\/clicky.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/clicky.mp3",
-		"oF": 0
-		},
-	"\/media\/cploop.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/cploop.mp3",
-		"oF": 0
-		},
-	"\/media\/Jan7.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/Jan7.mp3",
-		"oF": 0
-		},
-	"\/media\/Loop-1-9.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/Loop-1-9.mp3",
-		"oF": 0
-		},
-	"\/media\/march-11th.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/march-11th.mp3",
-		"oF": 0
-		},
-	"\/media\/platform1.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/platform1.mp3",
-		"oF": 0
-		},
-	"\/media\/weaver-2.mp3": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/media\/weaver-2.mp3",
-		"oF": 0
+	"\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/README.html",
+		"oF": 1,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		}
 	},
 "hooks": [
