@@ -633,6 +633,42 @@
 		"sC": 1,
 		"tS": 1
 		},
+	"\/media\/akula.mp3": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/akula.mp3",
+		"oF": 0
+		},
+	"\/media\/bowtie.mp3": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/bowtie.mp3",
+		"oF": 0
+		},
+	"\/media\/Jan7.mp3": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/Jan7.mp3",
+		"oF": 0
+		},
+	"\/media\/march-11th.mp3": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/march-11th.mp3",
+		"oF": 0
+		},
+	"\/media\/platform1.mp3": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/platform1.mp3",
+		"oF": 0
+		},
+	"\/media\/platform1.ogg": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/platform1.ogg",
+		"oF": 0
+		},
 	"\/media\/README.md": {
 		"cS": 0,
 		"eF": 1,
@@ -650,6 +686,12 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/media\/weaver-2.mp3": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/weaver-2.mp3",
+		"oF": 0
 		},
 	"\/README.md": {
 		"cS": 0,
