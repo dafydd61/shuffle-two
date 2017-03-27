@@ -8,6 +8,8 @@ const tracks = [
 ];
 
 let playlist;
+let allPlaying = false;
+let currentTrack = 0;
 
 function shuffle(_trackList) {
 	for (let i = _trackList.length; i; i--) {
@@ -17,31 +19,67 @@ function shuffle(_trackList) {
 	return _trackList;
 }
 
-function playAll() {
+function playNextTrack() {
+	console.log(`Current track: ${currentTrack}`);
+	if (currentTrack < playlist.length) {
+		const id = playlist[currentTrack].id;
+		const audio = document.querySelector(`audio[data-id="${id}"]`);
+		const trackInterface = document.querySelector(`.track-interface[data-id="${id}"]`);
+		audio.play();
+		trackInterface.classList.add('is-playing')
+		audio.addEventListener('timeupdate', function() {
+			if (this.currentTime >= this.duration) {
+				this.pause();
+				trackInterface.classList.remove('is-playing')
+				currentTrack++;
+				playNextTrack();
+			}
+		});
+	} else {
+		stopAll();
+	}
+}
 
+function playAll() {
+	allPlaying = true;
+	currentTrack = 0;
+	const controls = document.getElementById('controls');
+	controls.classList.add('is-all-playing');
+	playNextTrack();
 }
 
 function stopAll() {
 	console.log('stop');
+	allPlaying = false;
 	const audios = document.querySelectorAll('audio');
 	audios.forEach(function(audio) {
 		audio.pause();
 	});
+	const controls = document.getElementById('controls');
+	controls.classList.remove('is-all-playing');
 }
 
 function stopTrack(id) {
 	const audio = document.querySelector(`audio[data-id="${id}"]`);
+	const trackInterface = document.querySelector(`.track-interface[data-id="${id}"]`);
+	trackInterface.classList.remove('is-playing');
 	audio.pause();
 }
 
 function playTrack(id) {
 	const audios = document.querySelectorAll('audio');
+	const trackInterfaces = document.querySelectorAll('.track-interface');
 	audios.forEach(function(audio) {
 		audio.pause();
+	});
+	trackInterfaces.forEach(function(trackInterface) {
+		trackInterface.classList.remove('is-playing');
 	});
 	const audio = document.querySelector(`audio[data-id="${id}"]`);
 	audio.currentTime = 0;
 	audio.play();
+	const trackInterface = document.querySelector(`.track-interface[data-id="${id}"]`);
+	trackInterface.classList.add('is-playing');
 }
 
 const audioContainer = document.getElementById('audioContainer');
@@ -49,6 +87,7 @@ const audioContainer = document.getElementById('audioContainer');
 function makeTrackInterface(track) {
 	const li = document.createElement('li');
 	li.classList.add('track-interface');
+	li.dataset.id = track.id;
 	const trackContent = `<h1 class="track-title">${track.title}</h1>
 		<span class="track-author">${track.author}</span>
 		<div class="track-controls">
@@ -111,7 +150,12 @@ shuffleList(tracks);
 const stopAllButton = document.getElementById('stopAll');
 stopAllButton.addEventListener('click', stopAll);
 
+const playAllButton = document.getElementById('playAll');
+playAllButton.addEventListener('click', playAll);
+
 const shuffleButton = document.getElementById('shuffle');
 shuffleButton.addEventListener('click', function() {
-	shuffleList(tracks);
+	if (!allPlaying) {
+		shuffleList(tracks);
+	}
 });
