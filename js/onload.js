@@ -1,3 +1,5 @@
+console.log('NEW 2c');
+
 const tracks = [
 	{'id': 0, 'title': 'Jan 7', 'fileName': 'Jan7.mp3', 'author': 'Christine'},
 	{'id': 2, 'title': 'Akula', 'fileName': 'akula.mp3', 'author': 'Joshua'},
