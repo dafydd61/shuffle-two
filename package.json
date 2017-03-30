@@ -1,0 +1,23 @@
+{
+  "name": "shuffle-two",
+  "version": "1.0.0",
+  "description": "An ES6 refactoring of the original, which was built on a WordPress backend because I had no idea how to work with Javascript at the time. This is much better.",
+  "main": "gulpfile-min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dafydd61/shuffle-two.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dafydd61/shuffle-two/issues"
+  },
+  "homepage": "https://github.com/dafydd61/shuffle-two#readme",
+  "devDependencies": {
+    "normalize": "^0.3.1",
+    "normalize-scss": "^6.0.0"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["gulpfile.js"],"names":["gulp","require"],"mappings":"YAAA,IAAMA,MAAOC,QAAQ","file":"gulpfile-min.js","sourcesContent":["const gulp = require('gulp');"]}
