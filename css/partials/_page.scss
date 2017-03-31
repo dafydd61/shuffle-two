@@ -1,0 +1,21 @@
+.wrap {
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 1rem;
+}
+
+.main-header {
+	@extend .cf;
+}
+
+.tagline, #page-title {
+	display: inline-block;
+	background: $color--accent;
+	padding: .5em;
+	clear: both;
+	float: left;
+}
+
+#controls {
+	@extend .cf;
+}

@@ -1,0 +1,6 @@
+.track-interface {
+	transition: all 1s ease;
+	&.is-playing {
+		background: $color--bg2;
+	}
+}

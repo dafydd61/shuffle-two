@@ -6,16 +6,20 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
-		<h1>Shuffle</h1>
-	</header>
-	<div id="controls">
-		<button id="playAll">Play</button>
-		<button id="stopAll">Stop</button>
-		<button id="shuffle">Shuffle</button>
+	<div class="page">
+		<header class="main-header wrap">
+			<h1 id="page-title">Shuffle</h1>
+			<p class="tagline">The system only works if you adhere to the system.</p>
+		</header>
+		<div id="controls" class="wrap">
+			<button class="btn--control btn--play" id="playAll"><span class="icon--play"></span><span class="sr-only">Play</span></button>
+			<button class="btn--control btn--stop" id="stopAll"><span class="icon--stop"></span><span class="sr-only">Stop</span></button>
+			<button class="btn--control btn--playStop" id="playStopAll"><span id="icon--playstop" class="icon--play"></span><span class="sr-only">Play/Stop</span></button>
+			<button class="btn--control btn--shuffle" id="shuffle"><span class="arrow"></span><span class="arrow"></span><span class="sr-only">Shuffle</span></button>
+		</div>
+		<ol id="trackList" class="wrap"></ol>
+		<div id="audioContainer"></div>
 	</div>
-	<ol id="trackList"></ol>
-	<div id="audioContainer"></div>
 	<script src="js/onload-min.js"></script>
 </body>
 </html>

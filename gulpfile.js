@@ -21,7 +21,7 @@ gulp.task('js-watch', ['scripts'], () => {
 });
 
 gulp.task('sass', () => {
-	return gulp.src('./css/style.scss')
+	return gulp.src('./css/**/*.scss')
 		.pipe(sass())
 		.pipe(cssnano())
 		.pipe(gulp.dest('./css'))

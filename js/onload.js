@@ -1,5 +1,3 @@
-console.log('NEW 2c');
-
 const tracks = [
 	{'id': 0, 'title': 'Jan 7', 'fileName': 'Jan7.mp3', 'author': 'Christine'},
 	{'id': 2, 'title': 'Akula', 'fileName': 'akula.mp3', 'author': 'Joshua'},
@@ -13,12 +11,19 @@ let playlist;
 let allPlaying = false;
 let currentTrack = 0;
 
-function shuffle(_trackList) {
-	for (let i = _trackList.length; i; i--) {
+const title = "shuffle";
+const titleSplit = title.split('');
+const titleShuffled = shuffle(titleSplit).join('');
+const pageTitle = document.getElementById('page-title');
+pageTitle.innerHTML = titleShuffled;
+
+
+function shuffle(toShuffle) {
+	for (let i = toShuffle.length; i; i--) {
 		let j = Math.floor(Math.random() * i);
-		[_trackList[i - 1], _trackList[j]] = [_trackList[j], _trackList[i - 1]];
+		[toShuffle[i - 1], toShuffle[j]] = [toShuffle[j], toShuffle[i - 1]];
 	}
-	return _trackList;
+	return toShuffle;
 }
 
 function playNextTrack() {
@@ -47,6 +52,8 @@ function playAll() {
 	currentTrack = 0;
 	const controls = document.getElementById('controls');
 	controls.classList.add('is-all-playing');
+	const playStopIcon = document.getElementById('icon--playstop');
+	playStopIcon.classList.add('icon--stop');
 	playNextTrack();
 }
 
@@ -56,6 +63,10 @@ function stopAll() {
 	const audios = document.querySelectorAll('audio');
 	audios.forEach(function(audio) {
 		audio.pause();
+	});
+	const trackInterfaces = document.querySelectorAll('.track-interface');
+	trackInterfaces.forEach(function(trackInterface) {
+		trackInterface.classList.remove('is-playing');
 	});
 	const controls = document.getElementById('controls');
 	controls.classList.remove('is-all-playing');
@@ -93,8 +104,8 @@ function makeTrackInterface(track) {
 	const trackContent = `<h1 class="track-title">${track.title}</h1>
 		<span class="track-author">${track.author}</span>
 		<div class="track-controls">
-			<button class="track-play" data-id="${track.id}">Play</button>
-			<button class="track-stop" data-id="${track.id}">Stop</button>
+			<button class="btn track-play" data-id="${track.id}">Play</button>
+			<button class="btn track-stop" data-id="${track.id}">Stop</button>
 		</div>
 	`;
 	li.innerHTML = trackContent;
