@@ -47,12 +47,21 @@ function playNextTrack() {
 	}
 }
 
+function playStopAll() {
+	if (allPlaying) {
+		stopAll();
+	} else {
+		playAll();
+	}
+}
+
 function playAll() {
 	allPlaying = true;
 	currentTrack = 0;
 	const controls = document.getElementById('controls');
 	controls.classList.add('is-all-playing');
 	const playStopIcon = document.getElementById('icon--playstop');
+	playStopIcon.classList.remove('icon--play');
 	playStopIcon.classList.add('icon--stop');
 	playNextTrack();
 }
@@ -70,6 +79,9 @@ function stopAll() {
 	});
 	const controls = document.getElementById('controls');
 	controls.classList.remove('is-all-playing');
+	const playStopIcon = document.getElementById('icon--playstop');
+	playStopIcon.classList.add('icon--play');
+	playStopIcon.classList.remove('icon--stop');
 }
 
 function stopTrack(id) {
@@ -160,11 +172,8 @@ loadAudio(tracks);
 playlist = shuffle(tracks);
 shuffleList(tracks);
 
-const stopAllButton = document.getElementById('stopAll');
-stopAllButton.addEventListener('click', stopAll);
-
-const playAllButton = document.getElementById('playAll');
-playAllButton.addEventListener('click', playAll);
+const playStopAllButton = document.getElementById('playStopAll');
+playStopAllButton.addEventListener('click', playStopAll);
 
 const shuffleButton = document.getElementById('shuffle');
 shuffleButton.addEventListener('click', function() {
